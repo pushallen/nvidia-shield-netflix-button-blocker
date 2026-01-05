@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace = 'com.netflixblocker.app'
+    compileSdk = 35 
+
+    defaultConfig {
+        applicationId = "com.netflixblocker.app"
+        minSdk = 26 
+        targetSdk = 35 
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Fully utilizing your OpenJDK 21 for the Android build
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // 1. Force the version of Kotlin standard libraries to align
+    // This prevents the jdk7/jdk8 duplicate class conflict
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
+
+    // 2. existing dependencies
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.leanback:leanback:1.2.0-alpha04'
+    implementation 'androidx.core:core:1.15.0'
+}
+

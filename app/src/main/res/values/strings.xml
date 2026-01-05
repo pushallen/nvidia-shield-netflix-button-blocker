@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Netflix Button Blocker</string>
+
+    <string name="accessibility_service_description">Blocks the accidental Netflix button presses.</string>>
+
+    <string name="settings_title">Blocker Settings</string>
+    <string name="save_button">Save &amp; Apply</string>
+</resources>
