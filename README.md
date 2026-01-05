@@ -18,4 +18,5 @@ No root required. Simple configuration UI. Works on all Nvidia Shield models (20
 
 Perfect for preventing accidental Netflix launches or customizing your remote workflow.
 
-#Preview
+## Screenshots
+![Settings Screen](screenshots/settings-screen.png)
